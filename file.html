@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>demo</title>
+	<link rel="stylesheet" type="text/css" href="css/cropper.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/cropper-v3.1.3.js"></script>
+	<script src="js/fileload.js" type="text/javascript"></script>
+	<script src="js/uploadImg.js" type="text/javascript"></script>
+
+	<!-- easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+	<script type="text/javascript" src="easyui/jquery.easyui.min.1.4.5.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="easyui/js/jquery.edatagrid.js"></script>
+	<script type="text/javascript" src="easyui/js/jquery.easyui.extends.js"></script>
+	<script type="text/javascript" src="easyui/js/jquery.easyui.config.js"></script>
+	<script type="text/javascript" src="easyui/js/datagrid-detailview.js"></script>
+	
+	<!-- 插件 -->
+	<link rel="stylesheet" type="text/css"	href="upload/webuploader.css" />
+	<link rel="stylesheet" type="text/css"	href="upload/uploadstyle.css" />
+	<script type="text/javascript" src="upload/webuploader.js"></script>	
+	<script type="text/javascript" src="upload/imgUpload.js"></script>
+	<script type="text/javascript" src="upload/file_upload_att.js"></script>
+	<script type="text/javascript" src="upload/content_zoom.js"></script>
+</head>
+<body>
+	<!-- 需要裁剪的图片 -->
+	<div class="filefinal">
+		<div class="fileload" onclick="showdialog('files1','#fileshow1',true)">上传图片</div>
+		<div class="fileshow" id="fileshow1"><img src=""></div>
+	</div>
+	<div class="fileloadialog" id='files1'></div>
+	
+	<!-- 多张图片上传 -->
+	<div class="showarea clearfix">
+		<div class="kv-item-content">
+			<input type="hidden" id="photo_1" name="addFilePaths_1"/>
+			<input type="hidden" id="photo_name_1" name="addFileNames_1"/>
+			<input type="hidden" id="photo_del_1" name="delFilePaths_1"/>
+			<input type="hidden"  name="field_1" value="photo"/>
+			<div id="filePicker_1">上传图片</div>
+		</div>
+		<div id="wrapper_1"></div>
+	</div>
+	<!-- 上传音频文件 -->
+	<div class="showarea clearfix">
+		<div class="kv-item-content">
+			<input type="hidden" id="fileupload_2" name="addFilePaths_2"/>
+			<input type="hidden" id="fileupload_name_2" name="addFileNames_2"/>
+			<input type="hidden" id="fileupload_del_2" name="delFilePaths_2"/>
+			<input type="hidden"  name="field_2" value="vidio"/>
+			<div id="filePicker_2">上传音频文件</div>
+		</div>
+		<div id="wrapper_2"></div>
+	</div>
+
+	<!-- 上传doc,xls==文件 -->
+	<div class="showarea clearfix">
+		<div class="kv-item-content">
+			<input type="hidden" id="fileupload_3" name="addFilePaths_3"/>
+			<input type="hidden" id="fileupload_name_3" name="addFileNames_3"/>
+			<input type="hidden" id="fileupload_del_3" name="delFilePaths_3"/>
+			<input type="hidden"  name="field_3" value="doc"/>
+			<div id="filePicker_3">上传文件</div>
+		</div>
+		<div id="wrapper_3"></div>
+	</div>
+	<!-- <div class="fileloadialog" id='files3'></div> -->
+	<div class="loading">正在加载。。。</div>
+	<div class="fileloadmasking"></div>
+	<script type="text/javascript">
+		// 普通图片上传只传id
+		basic_upload.imgUpload('_1');
+		// 上传音频文件ag1 -- id,ag2---文件类型,ag3--是否显示在wrapper_x区域显示已经显示的内容
+		basic_upload_att.fileUpload('_2',acceptAutio,false);
+		basic_upload_att.fileUpload('_3',acceptDoc,true);
+	</script>
+
+</body>
+</html>

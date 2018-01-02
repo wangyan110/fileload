@@ -1,0 +1,41 @@
+.webuploader-container {
+	position: relative;
+}
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	/*background: #00b7ee;*/
+	background: #ff5623;
+	/*padding: 10px 15px;*/
+	padding: 2px 10px;
+	color: #fff;
+	text-align: center;
+	border-radius: 3px;
+	overflow: hidden;
+	font-size: 14px;
+}
+.webuploader-pick-hover {
+	box-shadow: 0 0 8px #666;
+}
+
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}
+.basic_upload_att_close{
+	background: #CF5B12;
+	color: #fff;
+	padding: 3px 8px;
+	border-radius: 3px;
+	margin-left:10px;
+	cursor: pointer;
+	font-size: 14px;
+}
+.basic_upload_att_close:hover{box-shadow: 0 0 8px #666;}
